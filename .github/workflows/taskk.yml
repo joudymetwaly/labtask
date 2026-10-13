@@ -1,0 +1,21 @@
+name: task ci/cd
+on:
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  job1:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        -name: hello
+          run: echo " welcome to the course"
+  job2:
+    needs: job1
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          -name: task1
+            run: echo "task one done"
+
